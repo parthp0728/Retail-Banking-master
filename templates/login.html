@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<title>Login | Retail Banking</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/index.css">
+
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Raleway", sans-serif
+  }
+
+  body,
+  html {
+    height: 100%;
+    line-height: 1.8;
+  }
+
+  .w3-bar .w3-button {
+    padding: 16px;
+  }
+</style>
+
+<body>
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-wide">Retail Banking</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+        </div>
+
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
+    <div class="container" style="position:relative;">
+      <div class="w3l_sign_in_register category">
+				<ul>
+					<li><a href="login.html" data-toggle="modal" data-target="#myModal" >LOGIN</a></li>
+				</ul>
+			</div>
+    <div>
+
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+    </nav>
+
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  </header>
+
+<!-- Login Form -->
+  <div class="login-page" id=myModal>
+    <div class="form">
+
+      <form class="login-form" method="post" id="userForm" action="http://localhost:5000/login">
+        <input required type="text" placeholder="username" name="uname" id="uname" />
+        <input required type="password" placeholder="password" name="pass" id="pass"/>
+        <input type="submit" class="submit" value="Login">
+
+      </form>
+    </div>
+  </div>
+
+<script>
+$('.message a').click(function(){
+   $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+</script>
+
+  <!-- Footer -->
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>Retail<span>banking</span></h3>
+
+      <p class="footer-links">
+        <a href="#" class="link-1">Home</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Faq</a>
+
+      </p>
+
+      <p class="footer-company-name">Retail Banking © 2020</p>
+    </div>
+
+    <div class="footer-center">
+
+      <h4>Services</h4>
+    <ul>
+        <li>Retail and Customer Banking</li>
+        <li>Personal Internet Banking</li>
+        <li>Corporate Internet Banking</li>
+        <li>Debit and Credit Cards</li>
+    </ul>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        Retail banking provide the detail services based on banking operation. The Retail Internet banking of this site offers a plethora of products and services, to cater its customers by providing certain animus services with an easy volving offers and way to do the required job without hurdling the process.
+        </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+      } else {
+        mySidebar.style.display = 'block';
+      }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
+
+</body>
+
+</html>
